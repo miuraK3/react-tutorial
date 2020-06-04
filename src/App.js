@@ -61,20 +61,10 @@ const Diary = () => {
             <div className = "message-body">
                 メモ：今回はとにかく試しただけです。(6/4)
             </div>
+            <div className = "message-body">
+                次回やること：見やすくすること。
+            </div>
         </article>
-    );
-}
-
-const Menu = () => {
-    return (
-        <aside className = "menu">
-            <p className = "menu-label-color">メニュー</p>
-            <ul className = "menu-list">
-                <li><a>その１</a></li>
-                <li><a>その２</a></li>
-                <li><a>その３</a></li>
-            </ul>
-        </aside>
     );
 }
 
@@ -142,7 +132,6 @@ const App = () => {
             <p>ページの完成度</p>
             <progress class="progress" value="1" max="100">1%</progress>
             <Diary />
-            <Menu />
             <Body1 />
             <Body2 />
             <Body3 />
