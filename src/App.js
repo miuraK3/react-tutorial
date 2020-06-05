@@ -59,7 +59,7 @@ const Diary = () => {
     return (
         <article className = "message is-dark has-text-centered">
             <div className = "message-body">
-                メモ：今回はとにかく試しただけです。(6/4)
+                メモ：とにかくBulmaで出来ることを試してみました。また、URLでも開けるようにしました。（6/5）
             </div>
             <div className = "message-body">
                 次回やること：画面全体を見やすくすること。
