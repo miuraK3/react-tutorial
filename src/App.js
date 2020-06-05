@@ -33,7 +33,7 @@ const Count = () => {
                 <dvi class = "level-item has-text-centered">
                     <dvi>
                         <p class = "heading">ページ作りに取り組んだ日数合計</p>
-                        <p class = "title">1</p>
+                        <p class = "title">2</p>
                     </dvi>
                 </dvi>
         </nav>
@@ -62,7 +62,7 @@ const Diary = () => {
                 メモ：今回はとにかく試しただけです。(6/4)
             </div>
             <div className = "message-body">
-                次回やること：見やすくすること。
+                次回やること：画面全体を見やすくすること。
             </div>
         </article>
     );
