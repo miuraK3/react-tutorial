@@ -1,18 +1,5 @@
 import React from "react";
 
-const Hero = () => {
-    return (
-        <section className = "hero is-success">
-            <div className = "hero-body">
-                <div className = "container">
-                    <h1 className = "title">初めてのページ作り </h1>
-                    <h2 className = "subtitle">2020/6/4〜</h2>
-                </div>
-            </div>
-        </section>
-    );
-};
-
 const Message = () => {
     return (
         <article className="message">
@@ -27,18 +14,18 @@ const Message = () => {
     );
 }
 
-const Count = () => {
+const Hero = () => {
     return (
-        <nav className = "level">
-                <dvi class = "level-item has-text-centered">
-                    <dvi>
-                        <p class = "heading">ページ作りに取り組んだ日数合計</p>
-                        <p class = "title">2</p>
-                    </dvi>
-                </dvi>
-        </nav>
+        <section className = "hero is-success">
+            <div className = "hero-body">
+                <div className = "container">
+                    <h1 className = "title">Reactで初めてのページ作り </h1>
+                    <h2 className = "subtitle">2020/6/4〜</h2>
+                </div>
+            </div>
+        </section>
     );
-}
+};
 
 const FirstWord = () => {
     return (
@@ -52,6 +39,25 @@ const FirstWord = () => {
                 </p>
             </dvi>
         </footer>
+    );
+}
+
+const Count = () => {
+    return (
+        <nav className = "level is-mobile">
+                <dvi className = "level-item has-text-centered">
+                    <dvi>
+                        <p className = "heading">ページ作りに取り組んだ日数合計</p>
+                        <p className = "title">3</p>
+                    </dvi>
+                </dvi>
+                <dvi className = "level-item has-textcentered">
+                    <dvi>
+                        <p className = "heading"> ページの完成度</p>
+                        <progress className = "progress" value="1" max="100">1%</progress>
+                    </dvi>
+                </dvi>
+        </nav>
     );
 }
 
@@ -71,12 +77,14 @@ const Diary = () => {
 const Body1 = () => {
     return (
     <section className = "section">
-        <div className = "container">
+        <div className = "container has-text-centered">
             <h2 className = "subtitle">（その１） ボタンの表示をしてみました。</h2>
             <p>あなたの性別であるボタンをクリックしてください。</p>
-            <button className = "button is-medium is-info">男性</button>
+            <dvi className = "colmns is6">
+            <button className = "button is-small is-info is-outlined">男性</button>
             <button className = "button is-medium is-danger">女性</button>
-            <button className = "button is-medium is-light">その他</button>
+            <button className = "button is-large is-light">その他</button>
+            </dvi>
         </div>
     </section>
     );
@@ -85,7 +93,7 @@ const Body1 = () => {
 const Body2 = () => {
     return (
     <section className = "section">
-        <div className = "container">
+        <div className = "container has-text-centered">
             <h2 className = "subtitle">（その２） 選択式の表示をしてみました。</h2>
             <p>あなたの性別を選んでください。</p> 
             <div class="select is-warning">
@@ -103,7 +111,7 @@ const Body2 = () => {
 const Body3 = () => {
     return (
     <section className = "section">
-        <div className = "container">
+        <div className = "container has-text-centered">
             <h2 className = "subtitle">（その３） テキストエリアの表示をしてみました。</h2>
             <p>あなたの性別を記入してください。</p>
             <textarea class="textarea is-warning" placeholder="男、女、その他"></textarea>
@@ -129,8 +137,7 @@ const App = () => {
             <Hero />
             <FirstWord />
             <Count />
-            <p>ページの完成度</p>
-            <progress class="progress" value="1" max="100">1%</progress>
+
             <Diary />
             <Body1 />
             <Body2 />
