@@ -29,46 +29,39 @@ const Hero = () => {
 
 const FirstWord = () => {
     return (
-        <footer className = "footer">
-            <dvi className = "content has-text-centered">
-                <p>
-                こんにちわ、miuraです。
-                このページはCSSフレームワーク Bulmaを使用してページが作れることを目標としています。
-                まだ完成像は考えていないのですが、学んだ知識を組み合わせて最終的にはちゃんとしたページを作りたいと思っています。
-               （暖かく見守っていてください。）そのため、ページ内容が次々と変わります。
-                </p>
-            </dvi>
-        </footer>
-    );
-}
-
-const Count = () => {
-    return (
-        <nav className = "level is-mobile">
-                <dvi className = "level-item has-text-centered">
-                    <dvi>
-                        <p className = "heading">ページ作りに取り組んだ日数合計</p>
-                        <p className = "title">3</p>
-                    </dvi>
-                </dvi>
-                <dvi className = "level-item has-textcentered">
-                    <dvi>
-                        <p className = "heading"> ページの完成度</p>
-                        <progress className = "progress" value="1" max="100">1%</progress>
-                    </dvi>
-                </dvi>
-        </nav>
+        <div className = "tile is-ancestor">
+        <div className = "tile is-4 is-vertical is-parent">
+          <div className = "tile is-child box">
+            <p className = "subtitle">ページ作りに取り組んだ日数</p>
+            <p className = "title has-text-centered">4</p>       
+          </div>
+          <div className = "tile is-child box">
+            <p className = "subtitle">ページ完成度</p>
+            <progress className = "progress" value="1" max="100">1%</progress>
+          </div>
+        </div>
+        <div className = "tile is-parent">
+          <div className = "tile is-child box">
+            <p className = "title">はじめに</p>
+            <p>こんにちわ、miuraです。</p>
+            <p>このページはCSSフレームワーク Bulmaを使用してページが作れることを目標としています。まだ完成像は考えていないのですが、学んだ知識を組み合わせて最終的にはちゃんとしたページを作りたいと思っています。（暖かく見守っていてください。）そのため、ページ内容が次々と変わります。</p>
+          </div>
+        </div>
+      </div>
     );
 }
 
 const Diary = () => {
     return (
-        <article className = "message is-dark has-text-centered">
+        <article className = "message is-warning has-text-centered">
             <div className = "message-body">
-                メモ：とにかくBulmaで出来ることを試してみました。また、URLでも開けるようにしました。（6/5）
+            <h2 className = "subtitle">メモ</h2>
+                とにかくBulmaで出来ることを試してみました。また、URLでも開けるようにしました。（6/7）<br></br>
+                タイル形式で「はじめに」と「ページ作りに取り組んだ日数」、「ページ完成度」をまとめてみました。（6/10）
             </div>
             <div className = "message-body">
-                次回やること：画面全体を見やすくすること。
+            <h2 className = "subtitle">次回やること</h2>
+                画面全体を見やすくすること。
             </div>
         </article>
     );
@@ -136,8 +129,6 @@ const App = () => {
             <Message />
             <Hero />
             <FirstWord />
-            <Count />
-
             <Diary />
             <Body1 />
             <Body2 />
