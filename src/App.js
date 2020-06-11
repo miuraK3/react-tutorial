@@ -27,6 +27,17 @@ const Hero = () => {
     );
 };
 
+const Tab = () =>{
+    return (
+        <div className = "tabs is-centered is-large">
+            <ul>
+                <li className = "is-active"><a>はじめに</a></li>
+                <li><a>記録</a></li>
+            </ul>
+        </div>
+    )
+}
+
 const FirstWord = () => {
     return (
         <div className = "tile is-ancestor">
@@ -128,6 +139,7 @@ const App = () => {
         <div>
             <Message />
             <Hero />
+            <Tab />
             <FirstWord />
             <Diary />
             <Body1 />
