@@ -1,3 +1,4 @@
+import icon from "./images/kirin.jpg";
 import React from "react";
 
 const Hero = () => {
@@ -20,7 +21,7 @@ const FirstWord = () => {
                 <article className ="media">
                     <div className ="media-left">
                         <figure className ="image is-64x64">
-                            <img className = "is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Image"></img>
+                            <img className = "is-rounded" src={icon} alt="kirin"></img>
                         </figure>
                     </div>
                     <div className ="media-content">
@@ -40,6 +41,7 @@ const FirstWord = () => {
 const Body1 = () => {
     return (
         <section className = "section">
+            <p className = "title">Miuraについて</p>
             <div className ="tile is-ancestor ">
                 <div className ="tile is-vertical ">
                     <div className ="tile">
