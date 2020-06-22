@@ -1,5 +1,5 @@
 import icon from "./images/kirin.jpg";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
     return (
@@ -28,13 +28,39 @@ const FirstWord = () => {
                         <div className ="content">
                             <p><strong>miura</strong> <br></br>
                             こんにちわ、miuraです。<br></br>
-                            このページはCSSフレームワーク Bulmaを使用して自己紹介のページが作れることを目標としています。
+                            このページはReactで自己紹介のWebページが作れることを目標としています。
                             そのためページ内容が次々と変わるかと思いますが、暖かく見守っていてください...。</p>
                         </div>
                     </div>
                 </article>
             </div>
         </section> 
+    );
+}
+
+const Count = () => {
+    const [count, setCount] = useState(0);
+    const handleButtonClick = () => {
+        alert("ありがとうございます！");
+        setCount(count+1);
+    }
+    return (
+        <section className = "section">
+            <nav class="level is-mobile">
+            <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">閲覧回数</p>
+                        <p class="title">{count}</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">閲覧したらぜひ↓</p>
+                        <button class="button is-rounded is-danger" onClick={handleButtonClick}>Clicke Me!</button>
+                    </div>
+                </div>
+            </nav>
+        </section>
     );
 }
 
@@ -84,6 +110,70 @@ const Body1 = () => {
     );
 }
 
+const Image = ({ url }) => {
+    return (
+      <div className="card">
+        <div className="card-image">
+          <figure className="image">
+            <img alt="dogs" src={url} />
+          </figure>
+        </div>
+      </div>
+    );
+};
+  
+const Content = ({ data }) => {
+    if (data == null) {
+      return (
+        <div className="content">
+          <p>読み込み中...</p>
+        </div>
+      );
+    }
+    return (
+      <div className="columns is-vcentered is-multiline">
+        {data.message.map((url, i) => {
+          return (
+            <div key={i} className="column">
+              <Image url={url} />
+            </div>
+          );
+        })}
+      </div>
+    );
+};
+
+const Body2 = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+      fetch("https://dog.ceo/api/breeds/image/random/3")
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data);
+        });
+    }, []);
+  
+    return (
+      <div>
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">息抜きコーナー</h1>
+              <h1 className="subtitle">
+                （<a href="https://dog.ceo/dog-api/">Dog API</a>より画像を借りています。）
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <Content data={data} />
+          </div>
+        </section>
+      </div>
+    );
+};  
+
 const Footer = () => {
     return (
         <footer className = "footer">
@@ -98,8 +188,10 @@ const App = () => {
     return (
         <div>
             <Hero />
+            <Count />
             <FirstWord />
             <Body1 />
+            <Body2 />
             <Footer />
         </div>
     );
