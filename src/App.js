@@ -2,15 +2,17 @@ import icon from "./images/kirin.jpg";
 import rama from "./images/rama.jpg";
 import hyou from "./images/hyou.jpg";
 import tora from "./images/tora.jpg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 const Hero = () => {
     return (
         <section className = "hero is-success">
             <div className = "hero-body">
                 <div className = "container has-text-centered">
-                    <h1 className = "title">Reactでページ作り</h1>
-                    <h2 className = "subtitle">2020/6/4~</h2>
+                    <h1 className = "title">Hello!</h1>
+                    <h2 className = "subtitle">This pages is about miura.</h2>
                 </div>
             </div>
         </section>
@@ -35,6 +37,10 @@ const FirstWord = () => {
                             こんにちわ、miuraです。<br></br>
                             このページはReactで自己紹介のWebページが作れることを目標としています。
                             そのためページ内容が次々と変わるかと思いますが、暖かく見守っていてください...。</p>
+                            <section className = "section has-text-centered">
+                              <p className ="heading">ページの完成度↓</p>
+                              <progress className ="progress is-danger" value="80" max="100">80%</progress>
+                            </section>
                         </div>
                     </div>
                 </article>
@@ -45,12 +51,11 @@ const FirstWord = () => {
     );
 }
 
-const Body1 = () => {
+const About = () => {
     return (
         <section className="hero">
           <div className="hero-body">
             <div className="container">
-            <p className = "title">Miuraについて（その１）</p>
             <div className ="tile is-ancestor ">
                 <div className ="tile is-vertical ">
                     <div className ="tile">
@@ -86,6 +91,32 @@ const Body1 = () => {
                                 </ul>
                             </article>
                         </div>
+                        <div className ="tile is-parent is-vertical">
+                            <article className ="tile is-child notification is-info">
+                                <p className ="subtitle">特に好きな〇〇について</p>
+                                <ul>
+                                    <ol><strong>映画：アベンジャーズシリーズ</strong></ol>
+                                    <ol><strong>ドラマ：キャッスル（ミステリー作家のNY事件簿）</strong></ol>
+                                    <ol><strong>バラエティ：世界の果てまでイッテQ！</strong></ol>
+                                    <ol><strong>動物：ラマ</strong></ol>
+                                    <ol><strong>食べ物：わらび餅</strong></ol>
+                                    <ol><strong>スポーツ：バトミントン</strong></ol>
+                                    <ol><strong>アーティスト：BTOB</strong></ol>
+                                </ul>
+                            </article>
+                        <div className ="tile is-parent is-vertical">
+                            <article className ="tile is-child notification is-primary">
+                                <p className ="subtitle">スポーツ経験</p>
+                                <ul>
+                                    <ol><strong>バトミントン</strong></ol>
+                                    <ol><strong>卓球</strong></ol>
+                                    <ol><strong>柔道</strong></ol>
+                                    <ol><strong>ゴルフ</strong></ol>
+                                    <ol><strong>アイススケート</strong></ol>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -149,61 +180,16 @@ const Dogs = () => {
     );
 };  
 
-const Body2 = () => {
+const Animals = () => {
     return (
         <section className="hero">
           <div className="hero-body">
             <div className="container">
-            <p className = "title">Miuraについて（その２）</p>
-            <div className ="tile is-ancestor ">
-                <div className ="tile is-vertical ">
-                    <div className ="tile">
-                        <div className ="tile is-parent">
-                            <article className ="tile is-child notification is-info">
-                                <p className ="subtitle">特に好きな〇〇について</p>
-                                <ul>
-                                    <ol><strong>映画：アベンジャーズシリーズ</strong></ol>
-                                    <ol><strong>ドラマ：キャッスル（ミステリー作家のNY事件簿）</strong></ol>
-                                    <ol><strong>バラエティ：世界の果てまでイッテQ！</strong></ol>
-                                    <ol><strong>動物：ラマ</strong></ol>
-                                    <ol><strong>食べ物：わらび餅</strong></ol>
-                                    <ol><strong>スポーツ：バトミントン</strong></ol>
-                                    <ol><strong>アーティスト：BTOB</strong></ol>
-                                </ul>
-                            </article>
-                        </div>
-                        <div className ="tile is-parent is-vertical">
-                            <article className ="tile is-child notification is-primary">
-                                <p className ="subtitle">スポーツ経験</p>
-                                <ul>
-                                    <ol><strong>バトミントン</strong></ol>
-                                    <ol><strong>卓球</strong></ol>
-                                    <ol><strong>柔道</strong></ol>
-                                    <ol><strong>ゴルフ</strong></ol>
-                                    <ol><strong>アイススケート</strong></ol>
-                                </ul>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-          </div>
-        </section>
-    );
-}
-
-const Body3 = () => {
-    return (
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container">
-            <p className = "title">Miuraについて（その３）</p>
             <div className ="tile is-ancestor ">
                 <div className ="tile is-vertical">
                     <div className ="tile">
                     <article class="tile is-child notification is-warning">
-                        <p className ="subtitle">自分で撮った写真（なぜかの動物メインで。）</p>
+                    <p className ="subtitle">動物メイン</p>
                         <div class="tile is-ancestor">
                             <div class="tile is-parent">
                                 <article class="tile is-child">
@@ -236,7 +222,6 @@ const Body3 = () => {
                                 </article>
                             </div>
                         </div>
-                        <p className ="subtitle">注）無断使用しないようにお願いします！</p>
                     </article>
                     </div>
                 </div>
@@ -249,25 +234,17 @@ const Body3 = () => {
 
 const Count = () => {
     const handleButtonClick = () => {
-        alert("ありがとうございます！");
+        alert("ありがとうございます！（特に何もないのですが・・・）");
     }
     return (
-        <section className = "section">
-            <nav class="level is-mobile">
+        <nav class="level is-mobile">
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">閲覧したらぜひ↓</p>
                     <button class="button is-rounded is-danger" onClick={handleButtonClick}>Clicke Me!</button>
                 </div>
             </div>
-            <div class="level-item has-text-centered">
-                <dvi>
-                    <p class="heading">ページ完成度</p>
-                    <progress class="progress" value="60" max="100">60%</progress>
-                </dvi>
-            </div>
-            </nav>
-        </section>
+        </nav>
     );
 }
 
@@ -286,8 +263,7 @@ const LastWord = () => {
                     <div className ="media-content">
                         <div className ="content">
                             <p><strong>miura</strong> <br></br>
-                            最後までありがとうございました！<br></br>
-                           （息抜きコーナとして使用した犬の画像は<a href="https://dog.ceo/dog-api/">Dog API</a>より借りています。）</p>
+                            最後までありがとうございました！<br></br></p>
                         </div>
                     </div>
                 </article>
@@ -309,18 +285,61 @@ const Footer = () => {
     );
 }
 
+const Body = () => {
+    return (
+        <Router>
+            <dvi className = "tabs is-medium">
+                <ul>
+                    <li className = "is-active">
+                    <Link to = "/first">はじめに</Link>
+                    </li>
+                    <li className = "is-active">
+                    <Link to = "/aboutMe">miuraについて</Link>
+                    </li>
+                    <li className = "is-active">
+                    <Link to = "/photo">写真</Link>
+                    </li>
+                    <li className = "is-active">
+                    <Link to = "/breaktime">息抜きコーナー</Link>
+                    </li>
+                    <li className = "is-active">
+                    <Link to = "/">最後に</Link>
+                    </li>
+                </ul>
+            </dvi>
+            <Switch>
+                <Route path = "/first">
+                    <FirstWord />
+                </Route>
+                <Route path = "/aboutMe">
+                    <About />
+                </Route>
+                <Route path = "/photo">
+                    <section className="hero">
+                        <div className="hero-body">
+                        <div className="container">
+                            <p className ="subtitle">今まで撮った来た写真たちです。<br></br><strong>注）無断使用しないようにお願いします！</strong></p>
+                        </div>
+                        </div>
+                    </section>
+                    <Animals />
+                </Route>
+                <Route path = "/breaktime">
+                    <Dogs />
+                </Route>
+                <Route path = "/">
+                    <LastWord />
+                </Route>
+            </Switch>
+        </Router>
+    );
+}
+
 const App = () => {
     return (
         <div>
             <Hero />
-            <FirstWord />
-            <Body1 />
-            <Dogs />
-            <Body2 />
-            <Dogs />
-            <Body3 />
-            <Dogs />
-            <LastWord />
+            <Body />
             <Footer />
         </div>
     );
