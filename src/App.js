@@ -144,14 +144,14 @@ const About2 = () => {
                     <div className ="media-content">
                         <div className ="content">
                         <p><strong>miura</strong> <br></br>
-                            自分について分析して見てみると以下のようになりますかね・・・。（一番低い値が4となっているので、中心値は4になります。）
+                            自分について分析して見てみると以下のようになりますかね・・・。（一番低い値が3となっているので、3〜10になります。）
                         </p>
                         <figure class="image">
                             <img src="https://quickchart.io/chart?c={
                                 type:'radar',
                                 data:{labels:['記憶力','判断力', 'コミュニケーション力','体力', '計画力'], 
                                 datasets:[{label:'自分で分析した場合',data:[8,9,7,4,10]},
-                                          {label:'友達が分析した場合',data:[7,10,7,6,9]},
+                                          {label:'友達が分析した場合',data:[7,7,9,3,8]},
                                           {label:'家族が分析した場合',data:[9,8,6,8,10]}]}
                                 }"></img>
                         </figure>
@@ -339,7 +339,7 @@ const Body = () => {
             <dvi className = "tabs is-medium is-centered">
                 <ul>
                     <li className = "is-active">
-                    <Link to = "/first">はじめに</Link>
+                    <Link to = "/">はじめに</Link>
                     </li>
                     <li className = "is-active">
                     <Link to = "/aboutMe">miuraについて</Link>
@@ -351,13 +351,13 @@ const Body = () => {
                     <Link to = "/breaktime">息抜きコーナー</Link>
                     </li>
                     <li className = "is-active">
-                    <Link to = "/">最後に</Link>
+                    <Link to = "/Last">最後に</Link>
                     </li>
                 </ul>
             </dvi>
             <Switch>
-                <Route path = "/first">
-                    <FirstWord />
+                <Route path = "/Last">
+                    <LastWord />
                 </Route>
                 <Route path = "/aboutMe">
                     <About />
@@ -370,7 +370,7 @@ const Body = () => {
                     <Comment />
                 </Route>
                 <Route path = "/">
-                    <LastWord />
+                    <FirstWord />
                 </Route>
             </Switch>
         </Router>
