@@ -12,7 +12,7 @@ const Hero = () => {
             <div className = "hero-body">
                 <div className = "container has-text-centered">
                     <h1 className = "title">Hello!</h1>
-                    <h2 className = "subtitle">This pages is about miura.</h2>
+                    <h2 className = "subtitle">Welcome to miura's page!</h2>
                 </div>
             </div>
         </section>
@@ -36,10 +36,13 @@ const FirstWord = () => {
                             <p><strong>miura</strong> <br></br>
                             こんにちわ、miuraです。<br></br>
                             このページはReactで自己紹介のWebページが作れることを目標としています。
-                            そのためページ内容が次々と変わるかと思いますが、暖かく見守っていてください...。</p>
+                            そのためページ内容が次々と変わるかと思いますが、暖かく見守っていてください...。<br></br><br></br>
+                            Hello, this is Miura. The goal of this page is to complish a self-introduce website by using React. 
+                            Will update further more information. (Bellow will be written in Japanese)
+                            </p>
                             <section className = "section has-text-centered">
                               <p className ="heading">ページの完成度↓</p>
-                              <progress className ="progress is-danger" value="80" max="100">80%</progress>
+                              <progress className ="progress is-danger" value="95" max="100">90%</progress>
                             </section>
                         </div>
                     </div>
@@ -126,63 +129,102 @@ const About = () => {
     );
 }
 
-const Image = ({ url }) => {
+const About2 = () => {
     return (
-      <div className="card">
-        <div className="card-image">
-          <figure className="image">
-            <img alt="dogs" src={url} />
-          </figure>
-        </div>
-      </div>
-    );
-};
-  
-const Content = ({ data }) => {
-    if (data == null) {
-      return (
-        <div className="content">
-          <p>読み込み中...（かわいい犬たちが出現しますよ）</p>
-        </div>
-      );
-    }
-    return (
-      <div className="columns is-vcentered is-mobile">
-        {data.message.map((url, i) => {
-          return (
-            <div key={i} className="column">
-              <Image url={url} />
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+            <div className ="box">
+                <article className ="media">
+                    <div className ="media-left">
+                        <figure className ="image is-64x64">
+                            <img className = "is-rounded" src={icon} alt="kirin"></img>
+                        </figure>
+                    </div>
+                    <div className ="media-content">
+                        <div className ="content">
+                        <p><strong>miura</strong> <br></br>
+                            自分について分析して見てみると以下のようになりますかね・・・。（一番低い値が4となっているので、中心値は4になります。）
+                        </p>
+                        <figure class="image">
+                            <img src="https://quickchart.io/chart?c={
+                                type:'radar',
+                                data:{labels:['記憶力','判断力', 'コミュニケーション力','体力', '計画力'], 
+                                datasets:[{label:'自分で分析した場合',data:[8,9,7,4,10]},
+                                          {label:'友達が分析した場合',data:[7,10,7,6,9]},
+                                          {label:'家族が分析した場合',data:[9,8,6,8,10]}]}
+                                }"></img>
+                        </figure>
+                        </div>
+                    </div>
+                </article>
             </div>
-          );
-        })}
-      </div>
-    );
-};
-
-const Dogs = () => {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-      fetch("https://dog.ceo/api/breeds/image/random/4")
-        .then((response) => response.json())
-        .then((data) => {
-          setData(data);
-        });
-    }, []);
-  
-    return (
-      <div>
-        <section className="section">
-          <div className="container">
-            <Content data={data} />
+            </div>
           </div>
         </section>
-      </div>
     );
-};  
+}
+
+const Comment = () => {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+    fetch("https://www.boredapi.com/api/activity?participants=1")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.activity);
+      });
+    }, []);
+
+    return (
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+            <div className ="box">
+                <article className ="media">
+                    <div className ="media-left">
+                        <figure className ="image is-64x64">
+                            <img className = "is-rounded" src={icon} alt="kirin"></img>
+                        </figure>
+                    </div>
+                    <div className ="media-content">
+                        <div className ="content">
+                        <p><strong>miura</strong> <br></br>
+                            暇なあなたにアドバイス：{data}
+                        </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            </div>
+          </div>
+        </section>
+    );
+}
 
 const Animals = () => {
     return (
         <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+            <div className ="box">
+                <article className ="media">
+                    <div className ="media-left">
+                        <figure className ="image is-64x64">
+                            <img className = "is-rounded" src={icon} alt="kirin"></img>
+                        </figure>
+                    </div>
+                    <div className ="media-content">
+                        <div className ="content">
+                        <p><strong>miura</strong> <br></br>
+                        今まで撮って来た写真たちです。<br></br><strong>注）無断使用しないようにお願いします！</strong>
+                        </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            </div>
+          </div>
+        
           <div className="hero-body">
             <div className="container">
             <div className ="tile is-ancestor ">
@@ -234,9 +276,10 @@ const Animals = () => {
 
 const Count = () => {
     const handleButtonClick = () => {
-        alert("ありがとうございます！（特に何もないのですが・・・）");
+        alert("ありがとうございます！");
     }
     return (
+        <section className = "section has-text-centered">
         <nav class="level is-mobile">
             <div class="level-item has-text-centered">
                 <div>
@@ -245,6 +288,7 @@ const Count = () => {
                 </div>
             </div>
         </nav>
+        </section>
     );
 }
 
@@ -263,7 +307,11 @@ const LastWord = () => {
                     <div className ="media-content">
                         <div className ="content">
                             <p><strong>miura</strong> <br></br>
-                            最後までありがとうございました！<br></br></p>
+                            最後までありがとうございました！<br></br>
+                            息抜きコーナーにランダムで出てくるアドバイスは<a href="https://www.boredapi.com/">The Bored API</a>より、
+                            自己分析に使ったレーダーチャートは<a href="https://quickchart.io/documentation/#radial-gauge">QuickChart</a>よりお借りしています。
+                            （←Web開発で使用するための無料APIです。）
+                            </p>
                         </div>
                     </div>
                 </article>
@@ -288,7 +336,7 @@ const Footer = () => {
 const Body = () => {
     return (
         <Router>
-            <dvi className = "tabs is-medium">
+            <dvi className = "tabs is-medium is-centered">
                 <ul>
                     <li className = "is-active">
                     <Link to = "/first">はじめに</Link>
@@ -313,19 +361,13 @@ const Body = () => {
                 </Route>
                 <Route path = "/aboutMe">
                     <About />
+                    <About2 />
                 </Route>
                 <Route path = "/photo">
-                    <section className="hero">
-                        <div className="hero-body">
-                        <div className="container">
-                            <p className ="subtitle">今まで撮った来た写真たちです。<br></br><strong>注）無断使用しないようにお願いします！</strong></p>
-                        </div>
-                        </div>
-                    </section>
                     <Animals />
                 </Route>
                 <Route path = "/breaktime">
-                    <Dogs />
+                    <Comment />
                 </Route>
                 <Route path = "/">
                     <LastWord />
