@@ -42,7 +42,7 @@ const FirstWord = () => {
                             </p>
                             <section className = "section has-text-centered">
                               <p className ="heading">ページの完成度↓</p>
-                              <progress className ="progress is-danger" value="95" max="100">90%</progress>
+                              <progress className ="progress is-danger" value="99" max="100">99%</progress>
                             </section>
                         </div>
                     </div>
@@ -322,7 +322,7 @@ const LastWord = () => {
         </section>
     );
 }
-    
+
 const Footer = () => {
     return (
         <footer className = "footer">
