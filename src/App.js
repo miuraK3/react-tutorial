@@ -67,10 +67,9 @@ const About = () => {
                                 <p className ="subtitle">Miuraの基本情報</p>
                                 <ul>
                                     <ol><strong>名前：miura</strong><br></br>（本名は伏せさせていただきます...。）</ol>
-                                    <ol><strong>年齢：20</strong></ol>
                                     <ol><strong>出身：東京</strong></ol>
                                     <ol><strong>大学：日本大学文理学部 情報科学科</strong></ol>
-                                    <ol><strong>海外歴：アメリカ・ボストン（0~3才）、中国・上海（4~15才）</strong><br></br>（悲しいことにアメリカの記憶は一切ありません。）</ol>
+                                    <ol><strong>海外歴：アメリカ・ボストン、中国・上海</strong><br></br>（悲しいことにアメリカの記憶は一切ありません。）</ol>
                                     <ol><strong>趣味：海外映画・ドラマ、写真</strong></ol>
                                     <ol><strong>最近ハマっていること：韓国のバラエティを見ること</strong></ol>
                                 </ul>
@@ -308,9 +307,9 @@ const LastWord = () => {
                         <div className ="content">
                             <p><strong>miura</strong> <br></br>
                             最後までありがとうございました！<br></br>
-                            息抜きコーナーにランダムで出てくるアドバイスは<a href="https://www.boredapi.com/">The Bored API</a>より、
+                            {/*息抜きコーナーにランダムで出てくるアドバイスは<a href="https://www.boredapi.com/">The Bored API</a>より、
                             自己分析に使ったレーダーチャートは<a href="https://quickchart.io/documentation/#radial-gauge">QuickChart</a>よりお借りしています。
-                            （←Web開発で使用するための無料APIです。）
+                           （←Web開発で使用するための無料APIです。）*/}
                             </p>
                         </div>
                     </div>
@@ -361,7 +360,6 @@ const Body = () => {
                 </Route>
                 <Route path = "/aboutMe">
                     <About />
-                    <About2 />
                 </Route>
                 <Route path = "/photo">
                     <Animals />
